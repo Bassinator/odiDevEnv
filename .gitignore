@@ -1,0 +1,6 @@
+SoftwareDelivery*
+wgetlog*
+*.retry
+*.zip
+*.jar
+.vagrant
