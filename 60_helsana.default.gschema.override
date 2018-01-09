@@ -1,0 +1,17 @@
+[org.gnome.desktop.input-sources]
+sources=[('xkb', 'ch+de_mac')]
+
+[org.desktop.lockdown]
+disable-lock-screen="true"
+
+[org.gnome.desktop.session]
+idle-delay="0"
+
+[org.gnome.nautilus.preferences]
+executable-text-activation="ask"
+
+[org.gnome.desktop.interface]
+menubar-accel=""
+
+[org.gnome.nautilus.icon-view]
+default-zoom-level='standard'

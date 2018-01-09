@@ -1,0 +1,112 @@
+---
+- name: odiDevEnv
+  hosts: all
+  become: true
+  become_method: sudo
+  vars:
+    download_url: http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-linux-x64
+    download_folder: /vagrant_downloads
+    java_archive: "jdk-8u152-linux-x64"
+
+
+  tasks:
+  - name: get JDK tarball (as RPM file)
+    get_url:
+      url:     "{{ download_url }}.rpm"
+      headers: 'Cookie:oraclelicense=accept-securebackup-cookie'
+      dest:    "{{ download_folder }}/{{ java_archive }}.rpm"
+  - name: install JDK via RPM file with yum
+    yum:
+      name: "{{ download_folder }}/{{ java_archive }}.rpm"
+
+  - name: groupinstall Server with GUI
+    yum:
+      name: "@^Server with GUI"
+  - name: install missing mesa-libGL library
+    yum:
+      name: mesa-libGL
+  - name: install missing mesa-libEGL library
+    yum:
+      name: mesa-libEGL
+  - name: get default runlevel
+    command: systemctl get-default
+    register: runlevel
+    changed_when: False
+  - name: Set graphical runlevel
+    command: systemctl set-default graphical.target
+    when: runlevel.stdout != "graphical.target"
+  - name: is graphical currently active
+    command: systemctl is-active graphical.target
+    register: graphical
+    changed_when: False
+    ignore_errors: yes #there is a bug, that exit code not 0 if inactive
+  - name: Switch to graphical runlevel
+    command: systemctl isolate graphical.target
+    when: graphical.stdout != "active"
+
+
+  - name: get keymap
+    command: localectl
+    register: locale
+    changed_when: False
+  - name: set keymap
+    command: localectl set-keymap ch-de_mac
+    when: "'ch-de_mac' not in locale.stdout"
+  - name: upload gnome default settings
+    copy:
+      src: 60_helsana.default.gschema.override
+      dest: /usr/share/glib-2.0/schemas/60_helsana.default.gschema.override
+      owner: root
+      group: root
+      mode: 0644
+    register: gdefaults
+  - name: activate gnome default settings
+    command: glib-compile-schemas /usr/share/glib-2.0/schemas/
+    when: gdefaults.changed
+  - name: restart gdm
+    service:
+      name: gdm
+      state: restarted
+    when: gdefaults.changed
+
+
+  - name: add gropu helsi
+    group:
+      name: helsi
+      state: present
+  - name: add user helsi
+    user:
+      name: helsi
+      password: $6$TRqTfPBIgHz.qKFV$1OkNHp1nlDqVYKi5e1nppUozu38aRu5E7pfrs3EXk31eUDK.muOYQWMQ87XHsxCZC8hMZ/eq6sBFl0kIwwmmN/
+      shell: /bin/bash
+      groups: helsi, gdm
+
+  - name: install updates
+    yum: name=* state=latest
+
+
+# install Fusion Middelware
+- name: install fusion middleware
+  hosts: all
+  become: true
+  become_method: sudo
+  vars:
+    download_folder: /vagrant_downloads
+
+  tasks:
+  - name: extract fusion middleware archive
+    unarchive:
+      src: "{{ download_folder}}/V886426-01.zip"
+      dest: .
+      remote_src: yes
+      creates: fmw_12.2.1.3.0_infrastructure.jar
+  - name: create  central inventory directory
+    file:
+      path: /soa/oracle/middleware/oracle_home_12_2_1_3
+      state: directory
+      owner: helsi
+      group: helsi
+  - name: link oracle_home
+    file:
+      src: /soa/oracle/middleware/Oracle_Home
+      dest: /soa/oracle/middleware/oracle_home_12_2_1_3
