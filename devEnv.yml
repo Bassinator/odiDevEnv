@@ -3,48 +3,19 @@
   hosts: all
   become: true
   become_method: sudo
-  vars:
-    download_url: http://download.oracle.com/otn-pub/java/jdk/8u152-b16/aa0333dd3019491ca4f6ddbe78cdb6d0/jdk-8u152-linux-x64
-    download_folder: /vagrant_downloads
-    java_archive: "jdk-8u152-linux-x64"
 
+  vars_files:
+    # User defined variables for infrastructure
+    - infra-vars.yml
+    - wls-vars.yml
+    - secrets.yml
+
+  roles:
+    - role: linux-jdk
+    - role: linux-graphical
+    - role: linux-wls
 
   tasks:
-  - name: get JDK tarball (as RPM file)
-    get_url:
-      url:     "{{ download_url }}.rpm"
-      headers: 'Cookie:oraclelicense=accept-securebackup-cookie'
-      dest:    "{{ download_folder }}/{{ java_archive }}.rpm"
-  - name: install JDK via RPM file with yum
-    yum:
-      name: "{{ download_folder }}/{{ java_archive }}.rpm"
-
-  - name: groupinstall Server with GUI
-    yum:
-      name: "@^Server with GUI"
-  - name: install missing mesa-libGL library
-    yum:
-      name: mesa-libGL
-  - name: install missing mesa-libEGL library
-    yum:
-      name: mesa-libEGL
-  - name: get default runlevel
-    command: systemctl get-default
-    register: runlevel
-    changed_when: False
-  - name: Set graphical runlevel
-    command: systemctl set-default graphical.target
-    when: runlevel.stdout != "graphical.target"
-  - name: is graphical currently active
-    command: systemctl is-active graphical.target
-    register: graphical
-    changed_when: False
-    ignore_errors: yes #there is a bug, that exit code not 0 if inactive
-  - name: Switch to graphical runlevel
-    command: systemctl isolate graphical.target
-    when: graphical.stdout != "active"
-
-
   - name: get keymap
     command: localectl
     register: locale
@@ -52,23 +23,6 @@
   - name: set keymap
     command: localectl set-keymap ch-de_mac
     when: "'ch-de_mac' not in locale.stdout"
-  - name: upload gnome default settings
-    copy:
-      src: 60_helsana.default.gschema.override
-      dest: /usr/share/glib-2.0/schemas/60_helsana.default.gschema.override
-      owner: root
-      group: root
-      mode: 0644
-    register: gdefaults
-  - name: activate gnome default settings
-    command: glib-compile-schemas /usr/share/glib-2.0/schemas/
-    when: gdefaults.changed
-  - name: restart gdm
-    service:
-      name: gdm
-      state: restarted
-    when: gdefaults.changed
-
 
   - name: add gropu helsi
     group:
@@ -77,7 +31,7 @@
   - name: add user helsi
     user:
       name: helsi
-      password: $6$TRqTfPBIgHz.qKFV$1OkNHp1nlDqVYKi5e1nppUozu38aRu5E7pfrs3EXk31eUDK.muOYQWMQ87XHsxCZC8hMZ/eq6sBFl0kIwwmmN/
+      password: "{{ oracle_os_user_pass }}"
       shell: /bin/bash
       groups: helsi, gdm
 

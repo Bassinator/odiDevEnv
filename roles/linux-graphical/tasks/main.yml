@@ -1,0 +1,40 @@
+- name: groupinstall Server with GUI
+  yum:
+    name: "@^Server with GUI"
+- name: install missing mesa-libGL library
+  yum:
+    name: mesa-libGL
+- name: install missing mesa-libEGL library
+  yum:
+    name: mesa-libEGL
+- name: get default runlevel
+  command: systemctl get-default
+  register: runlevel
+  changed_when: False
+- name: Set graphical runlevel
+  command: systemctl set-default graphical.target
+  when: runlevel.stdout != "graphical.target"
+- name: is graphical currently active
+  command: systemctl is-active graphical.target
+  register: graphical
+  changed_when: False
+  ignore_errors: yes #there is a bug, that exit code not 0 if inactive
+- name: Switch to graphical runlevel
+  command: systemctl isolate graphical.target
+  when: graphical.stdout != "active"
+- name: upload gnome default settings
+  copy:
+    src: 60_helsana.default.gschema.override
+    dest: /usr/share/glib-2.0/schemas/60_helsana.default.gschema.override
+    owner: root
+    group: root
+    mode: 0644
+  register: gdefaults
+- name: activate gnome default settings
+  command: glib-compile-schemas /usr/share/glib-2.0/schemas/
+  when: gdefaults.changed
+- name: restart gdm
+  service:
+    name: gdm
+    state: restarted
+  when: gdefaults.changed
