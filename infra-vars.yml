@@ -1,5 +1,0 @@
-# Oracle os user and group
-oracle_user: 'oracle'
-oracle_group: 'oinstall'
-# Software and configuration main directory
-oracle_base: '/oracle/fmw12.1.3'

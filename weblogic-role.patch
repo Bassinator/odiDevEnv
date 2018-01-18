@@ -1,0 +1,34 @@
+4,6c4,6
+< - name: Check Helsana environment facts
+<   fail:
+<     msg: '/etc/ansible/facts.d/helsana_env.fact is missing. Run `puppet agent -t`'
+---
+> #- name: Check Helsana environment facts
+> #  fail:
+> #    msg: '/etc/ansible/facts.d/helsana_env.fact is missing. Run `puppet agent -t`'
+8,9c8,9
+<   when: (not 'helsana_env' in ansible_local) or
+<         (not 'stufe' in ansible_local.helsana_env)
+---
+> #  when: (not 'helsana_env' in ansible_local) or
+> #        (not 'stufe' in ansible_local.helsana_env)
+11,12c11,12
+<   tags:
+<     - 'role::oracle-weblogic:oem'
+---
+> #  tags:
+> #    - 'role::oracle-weblogic:oem'
+49,53c49,53
+< - name: Prepare OEM agent account
+<   include: oem.yml
+< 
+<   tags:
+<     - 'role::oracle-weblogic:oem'
+---
+> #- name: Prepare OEM agent account
+> #  include: oem.yml
+> #
+> #  tags:
+> #    - 'role::oracle-weblogic:oem'
+61d60
+< 

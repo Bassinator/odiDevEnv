@@ -1,13 +1,19 @@
-# Common paths and names
-middleware_home: '{{ oracle_base }}/product/Oracle_Home'
-#middleware_common_home: '{{ middleware_home }}/oracle_common'
-domains_home: '{{ oracle_base }}/config/Domains'
-applications_home: '{{ oracle_base }}/config/applications'
-#mw_installer_folder: '{{ oracle_base }}/installer'
-#domain_home: '{{ domains_home }}/{{ domain_name }}'
-#nodemanager_home: '{{ oracle_base }}/config/nodemanagers/{{ domain_name }}'
-#weblogic_home: '{{ middleware_home }}/wlserver'
-#nodemanager_username: 'weblogic'
-#weblogic_admin: 'weblogic'
-#admin_server_name: 'AdminServer'
-#server_hostname: '{{ ansible_fqdn }}'
+# Create separate partition via 'helsana.filesystem' role
+weblogic_create_fs: False
+
+# WebLogic Server version
+weblogic_version: 'FMW12.2.1.3'
+
+# WebLogic Linux user account
+weblogic_user: '{{ installation_os_user }}'
+
+# WebLogic user comment
+weblogic_user_gecos: '{{ installation_os_user_gecos }}'
+
+# WebLogic user home directory
+weblogic_user_home: '{{ installation_ora_base }}'
+
+# WebLogic Linux group
+weblogic_group: '{{ installation_os_group }}'
+
+skip_weblogic_oem_register: True

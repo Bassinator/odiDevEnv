@@ -1,0 +1,113 @@
+---
+# defaults file for oracle-weblogic
+
+# WebLogic Server version
+weblogic_version: '12.2.1.2'
+
+# WebLogic Java version
+weblogic_java: '{{ weblogic_resource_map[weblogic_version].default_java }}'
+
+
+#
+# WebLogic User Account Configuration
+#
+
+# WebLogic Linux user account
+weblogic_user: 'wls'
+
+# WebLogic UID (if not defined, a system user with OS-provided UID will be generated)
+#weblogic_user_id: 1337
+
+# WebLogic user comment
+weblogic_user_gecos: 'Oracle WebLogic Server'
+
+# WebLogic user home directory
+weblogic_user_home: '{{ weblogic_base }}'
+
+# WebLogic Linux group
+weblogic_group: 'wls'
+
+# WebLogic GID (if not defined, a system group with OS-provided GID will be generated)
+#weblogic_group_id: 1337
+
+# Set to 'False' if you don't want the user to be created by Ansible
+weblogic_create_user: True
+
+# WebLogic account resource limits
+# Note: RHEL 7 already defines nproc 4096 therefore should at least
+weblogic_security_limits:
+  nofile: 4096
+  nproc: 4096
+
+
+#
+# Installation Configuration
+#
+
+# Oracle base directory
+weblogic_base: '/opt/oracle'
+
+# Create separate partition via 'helsana.filesystem' role
+weblogic_create_fs: True
+
+# Size of the Oracle base directory file system (as understood by LVM)
+weblogic_fs_size: '10G'
+
+# Software partition configuration for 'helsana.filesystem' role
+weblogic_fs_partitions:
+  - type: 'software'
+    name: 'oracle'
+    size: '{{ weblogic_fs_size }}'
+    mount_options: 'noatime,nodev'
+    mount_point: '{{ weblogic_base }}'
+
+# WebLogic Middleware directory
+weblogic_path: '{{ weblogic_base }}/Middleware_{{ weblogic_version|replace("FMW","")|replace(".","") }}'
+
+# Oracle inventory pointer file
+weblogic_inventory_ptr: '/etc/oraInst.loc'
+
+# Oracle inventory location
+weblogic_inventory_dir: '{{ weblogic_base }}/oraInventory'
+
+# WebLogic response file configuration
+weblogic_response_config:
+  ORACLE_HOME: '{{ weblogic_path }}'
+  INSTALL_TYPE: '{{ weblogic_resource_map[weblogic_version].install_type }}'
+#'WebLogic Server'
+
+# RPM packages which are required for the WebLogic setup
+weblogic_packages:
+  - 'hel-wls_domain_setup'
+  - 'hel-wls-base'
+
+# List of RPM packages which should additionally be installed
+weblogic_custom_packages: []
+
+
+#
+# Resource Configuration
+#
+
+# HTTP(s) URL of WebLogic installer and response files
+weblogic_installer_url: 'https://admksp01.hel.kko.ch/linux/repo/3rdparty/oracle-WLS'
+
+# HTTP(S) base URL of WebLogic configuration files/scripts
+weblogic_config_url: 'https://admksp01.hel.kko.ch/linux/repo/helsana_config'
+
+# Download directory
+weblogic_download_dir: '{{ weblogic_base }}/download'
+
+
+#
+# OEM Agent account configuration
+#
+
+# Linux account used for Oracle Enterprise Manager agent installation
+weblogic_oem_account: '{{ weblogic_oem_account_map[ansible_local.helsana_env.stufe] }}'
+
+# Agent account mapping for different infrastructure levels
+weblogic_oem_account_map:
+  devel: 'hf1u6'
+  test: 'hf1u6'
+  prod: 'hf1u7'

@@ -1,0 +1,9 @@
+package_list:
+  - 'patch' # patch tool
+  - 'hel-rootca' # helsna root CA
+  - 'unzip'
+  - 'iftop'
+
+helsana_ansible_roles:
+  - 'ansible-java'
+  - 'ansible-oracle-weblogic'

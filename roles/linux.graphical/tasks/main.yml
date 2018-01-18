@@ -38,3 +38,9 @@
     name: gdm
     state: restarted
   when: gdefaults.changed
+
+- name: add user helsi to gdm group
+  user:
+    name: helsi
+    groups: gdm
+    append: yes
