@@ -33,7 +33,12 @@ Vagrant.configure("2") do |config|
 
   #following fixes a bug see https://github.com/hashicorp/vagrant/issues/7648
   config.vm.provider 'virtualbox' do |vb|
+
     vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
+    unless File.exist?('./secondDisk.vmdk')
+      vb.customize ['createhd', '--filename', './secondDisk.vmdk', '--format', 'VMDK','--size', 40 * 1024]
+    end
+    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium',  './secondDisk.vmdk']
   end
   #config.vm.hostname = 'odiDevEnv'
   #config.vm.network "public_network", ip: "192.168.1.4"

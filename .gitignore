@@ -5,6 +5,7 @@ wgetlog*
 *.zip
 *.jar
 .vagrant
+*.vmdk
 =======
 .vagrant
 *.retry

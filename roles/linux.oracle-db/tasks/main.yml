@@ -46,5 +46,4 @@
     owner: '{{  oracle_os_user }}'
     group: '{{  oracle_os_group }}'
     remote_src: True
-    force: no
   with_items: '{{ oracle_response_files }}'

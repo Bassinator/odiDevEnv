@@ -17,8 +17,14 @@
     - wls-vars.yml
     - secrets.yml
 
+  pre_tasks:
+  - lvg:
+      vg: vg00
+      pvs: /dev/sdb
+
+
   roles:
     - helsana.java
     - helsana.oracle-weblogic
     - linux.oracle-db
-    - linux.graphical
+#    - linux.graphical
