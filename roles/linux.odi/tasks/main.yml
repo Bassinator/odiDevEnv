@@ -1,0 +1,51 @@
+- name: correct java version selected
+  alternatives:
+    name: java
+    link: /usr/bin/java
+    path: /usr/lib/jvm/java-1.8.0-oracle/bin/java
+
+
+- name: Copy response file
+  template:
+    src: 'odiInstallResponseFile.rsp'
+    dest: '{{ oracle_download_dir }}/'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
+- name: install ODI
+  become: True
+  become_user: '{{ oracle_os_user }}'
+  command: 'java -jar /media/sf_DPF_Upgrade/12.2.1/fmw_12.2.1.3.0_odi.jar -silent -responseFile {{ oracle_download_dir }}/odiInstallResponseFile.rsp'
+  args:
+    creates: '{{ odi_install_dir }}/odi/'
+- name: Add Odi Studio to Launcher
+  template:
+    src: 'Odi.desktop'
+    dest: '~{{ oracle_os_user }}/.local/share/applications/'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
+- name: import repo connections
+  template:
+    src: 'snps_login_work_12.xml'
+    dest: '~{{ oracle_os_user }}/.odi/oracledi/'
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'
+
+
+- name: install sql developer
+  yum:
+    name: /media/sf_DPF_Upgrade/12.2.1/sqldeveloper-{{ sqldeveloper_version }}-1.noarch.rpm
+    state: present
+- name: create sqldeveloper config directories
+  file:
+    path: /home/{{ oracle_os_user }}/.sqldeveloper/system{{ sqldeveloper_version }}/o.jdeveloper.db.connection/
+    state: directory
+    mode: 0755
+    recurse: True
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'
+- name: import sqldeveloper connections
+  copy:
+    src: sqldeveloper_connections.xml
+    dest: /home/{{ oracle_os_user }}/.sqldeveloper/system{{ sqldeveloper_version }}/o.jdeveloper.db.connection/connections.xml
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'

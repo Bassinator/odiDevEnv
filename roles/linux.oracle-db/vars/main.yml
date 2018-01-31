@@ -3,16 +3,8 @@ oracle_src_location: '/media/sf_DPF_Upgrade/12.2.1/'
 
 oracle_archive: 'linuxx64_12201_database.zip'
 
-# oracle installation user
-oracle_os_user: '{{ installation_os_user }}'
-# oracle installation user
-
-oracle_os_group: '{{ installation_os_group }}'
-
-# Download directory
-oracle_download_dir: '{{ installation_ora_base }}/download'
-
-oracle_response_files:
-  - 'soaDbInstallResponseFile.rsp'
-#  - 'dbInstallResponseFile.rsp'
-  - 'odiDbInstallResponseFile.rsp'
+package_list:
+  - 'oracle-database-server-12cR2-preinstall'
+#  - 'compat_libcap1' # patch tool
+#  - 'ksh' # helsna root CA
+#  - 'libaio-devel'

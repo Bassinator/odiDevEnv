@@ -1,14 +1,13 @@
+installation_os_user: helsi
+installation_os_group: helsi
+
 package_list:
   - 'patch' # patch tool
   - 'hel-rootca' # helsna root CA
   - 'unzip'
   - 'iftop'
-  - 'git'
 
 helsana_ansible_roles:
   - 'ansible-java'
+  - 'ansible-filesystem'
   - 'ansible-oracle-weblogic'
-
-helsana_proxy_settings:
-  - 'http_proxy=http://proxy-surf.hel.kko.ch:8080'
-#  - 'https_proxy=https://proxy-surf.hel.kko.ch:8080'

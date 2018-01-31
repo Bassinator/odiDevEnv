@@ -11,18 +11,16 @@
     line: '{{ item }}'
   with_items: '{{ helsana_proxy_settings }}'
 
-- name: add installation user group
+- name: add gropu helsi
   group:
     name: '{{ installation_os_group }}'
 
-- name: add user helsi to installation user group and wheel
+- name: add user helsi
   user:
     name: '{{ installation_os_user }}'
     password: '$6$TRqTfPBIgHz.qKFV$1OkNHp1nlDqVYKi5e1nppUozu38aRu5E7pfrs3EXk31eUDK.muOYQWMQ87XHsxCZC8hMZ/eq6sBFl0kIwwmmN/'
     shell: /bin/bash
-    groups:
-      - '{{ installation_os_group }}'
-      - 'wheel'
+    groups: '{{ installation_os_group }}'
 
 - name: Add Helsana repository
   yum_repository:
@@ -38,7 +36,7 @@
     baseurl: http://admksp01.hel.kko.ch/linux/repo/3rdparty/oracle-JDK/
     gpgcheck: no
 
-- name: install helsana ansible roles roles
+- name: install helsana ansible roles
   yum:
     name: "{{ item }}"
     state: installed

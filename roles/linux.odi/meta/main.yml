@@ -1,0 +1,3 @@
+dependencies:
+  - { role: linux.graphical }
+  - { role: helsana.java }

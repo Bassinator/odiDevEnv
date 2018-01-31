@@ -31,36 +31,51 @@ Vagrant.configure("2") do |config|
 
   config.vm.box = "ol74"
 
-  #following fixes a bug see https://github.com/hashicorp/vagrant/issues/7648
   config.vm.provider 'virtualbox' do |vb|
+    vb.name = "SPF Development VM"
 
+
+    # following fixes a bug see https://github.com/hashicorp/vagrant/issues/7648v.gui = true
     vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
-    unless File.exist?('./secondDisk.vmdk')
-      vb.customize ['createhd', '--filename', './secondDisk.vmdk', '--format', 'VMDK','--size', 40 * 1024]
+    vb.memory = 4096
+    vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
+    # 3d acceleration only works if started with gui. Needed vor ODI
+    vb.gui = true
+    vb.cpus = 4
+    vb.customize ['modifyvm', :id, '--vram', '64']
+    vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
+
+    new_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-ora.vmdk'
+    old_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-disk2.vmdk'
+
+    unless File.exist?(new_second_disk)
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', 'none']
+      vb.customize ['closemedium', 'disk', old_second_disk, '--delete']
+      vb.customize ['createhd', '--filename', new_second_disk, '--format', 'VMDK','--size', 40 * 1024]
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium',  new_second_disk]
     end
-    vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium',  './secondDisk.vmdk']
   end
-  #config.vm.hostname = 'odiDevEnv'
-  #config.vm.network "public_network", ip: "192.168.1.4"
-  #config.vm.network "private_network", ip: "192.168.50.4",
-  #  virtualbox__intnet: true
-  #config.vm.synced_folder "~/Downloads", "/vagrant_downloads/"
-  #config.vm.synced_folder "C:\\Users\\EX3NS\\Downloads", "/vagrant_downloads/"
+
   config.vm.synced_folder 'U:\Team\ICC\8 Work\64-bit\VirtualBox', "/media/Virtualbox"
   config.vm.synced_folder 'U:\Team\ICC\8 Work\DPF Upgrade\12.2.1', "/media/sf_DPF_Upgrade/12.2.1"
 
-  #TODO: replace with ruby see: https://github.com/hashicorp/vagrant/issues/2662
-  #config.vm.provision "shell" , path: "script.sh", :args => [Username.new, Password.new]
-  #config.vm.provision "shell" , path: "script.sh", env: {"USERNAME" => Username.new, "PASSWORD" => Password.new}
-  config.vm.provision "shell" , path: "script.sh", env: {"USERNAME" =>"ex3ns", "PASSWORD" => "ma3xi3Ap"}
+  # ask account, if hashed secrets not yet stored on disk
+  unless File.exist?('.secrets')
+    username=Username.new();
+    password=Password.new();
+  end
+
+  config.vm.provision "shell" , path: "script.sh", env: {"USERNAME" =>username, "PASSWORD" => password}
 
   config.vm.provision "ansible_local" do |ansible1|
-    ansible1.verbose = "vvv"
+#    ansible1.verbose = "v"
     ansible1.playbook = "baseSetup.yml"
+    ansible1.install = true
   end
 
   config.vm.provision "ansible_local" do |ansible2|
-    ansible2.verbose = "vvv"
+    ansible2.verbose = "v"
     ansible2.playbook = "devEnv.yml"
+    ansible2.install = true
   end
 end

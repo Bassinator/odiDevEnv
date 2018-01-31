@@ -1,9 +1,22 @@
+- name: change ownership of installation directory
+  file:
+    path: '{{ oracle_fs_base }}'
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'
+
+- name: install requiered packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+    "{{ package_list }}"
+
 - name: Create download directory
   file:
     path: '{{ oracle_download_dir }}'
     state: directory
     owner: '{{ oracle_os_user }}'
-    group: '{{ installation_os_group }}'
+    group: '{{ oracle_os_group }}'
     mode: 0755
 
 - name: adapt sysconfig for oracle DB
@@ -28,7 +41,7 @@
     - { domain: '*', limit_type: 'soft', limit_item: 'stack', value: '10240'}
 
 
-## because archive does not honor existing estracted files with unzip
+## because archive does not honor existing extracted files with unzip
 - stat:
     path: '{{ oracle_download_dir }}/database'
   register: extracted
@@ -37,13 +50,95 @@
   unarchive:
     src: '{{ oracle_src_location }}/{{ oracle_archive }}'
     dest: '{{ oracle_download_dir }}'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
   when: extracted.stat.isdir is not defined or not extracted.stat.isdir
 
-- name: Copy response files
-  copy:
-    src: '{{ role_path }}/files/{{ item }}'
+
+- name: Copy sw installation response file
+  template:
+    src: 'oraSwInstallResponseFile.rsp'
     dest: '{{ oracle_download_dir }}/'
     owner: '{{  oracle_os_user }}'
     group: '{{  oracle_os_group }}'
-    remote_src: True
-  with_items: '{{ oracle_response_files }}'
+
+
+- name: Install Oracle Database Software
+  become: True
+  become_user: '{{ oracle_os_user }}'
+  command: '{{ oracle_download_dir }}/database/runInstaller -silent -waitforcompletion -responseFile {{ oracle_download_dir }}/oraSwInstallResponseFile.rsp'
+  args:
+    creates: '{{ oracle_home }}'
+  register: oradbinstall
+  # use this because of silly exit codes of the oracle installer
+  failed_when: "'The installation of Oracle Database 12c was successful.'  not in oradbinstall.stdout  and 'skipped, since {{ oracle_home }} exists' not in oradbinstall.stdout"
+
+# TODO: transform script to ansible tasks
+- name: Oracle post installation task orainstRoot.sh
+  become: True
+  command: '{{ oracle_inventory }}/orainstRoot.sh'
+  register: command_result
+  when: oradbinstall.changed
+  failed_when: "'The execution of the script is complete.'  not in command_result.stdout and 'skipped, since /etc/oraInst.loc exists' not in command_result.stdout"
+
+# TODO: transform script to ansible tasks
+- name: Oracle post installation task root.sh
+  become: True
+  command: '{{ oracle_home }}/root.sh'
+  register: command_result
+  when: oradbinstall.changed
+
+- name: Update environment
+  template:
+    src: 'oracle.sh'
+    dest: '/etc/profile.d/'
+
+- name: Copy db installation response files
+  template:
+    src: 'dbInstallResponseFile.rsp'
+    dest: '{{ oracle_download_dir }}/{{ gdbname }}dbInstallResponseFile.rsp'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
+  vars:
+    gdbname: '{{ item.gdbname }}'
+    sid: '{{ item.sid }}'
+  with_items: '{{ dbs }}'
+
+#- name: run post installtion configuration
+#  become: True
+#  become_user: '{{ oracle_os_user }}'
+#  command: '{{ oracle_download_dir }}/database/runInstaller -silent -waitforcompletion -executeConfigTools -responseFile {{ oracle_download_dir }}/oraSwInstallResponseFile.rsp'
+#  when: oradbinstall.changed
+#  register: command_result
+  # use this because of silly exit codes of the oracle installer
+  #ignore_errors: True
+#  failed_when: "'Successfully Configured Software.' not in command_result.stdout"
+
+
+- name: Create '{{ item.gdbname }}' Database
+  become: True
+  become_user: '{{ oracle_os_user }}'
+  when: install_dbs
+  command: '{{ oracle_base }}/product/12.2.0/dbhome_1/bin/dbca -silent -createDatabase -responseFile {{ oracle_download_dir }}/{{ gdbname }}dbInstallResponseFile.rsp'
+  args:
+    creates: '{{ datafile_destination }}'
+  register: command_result
+  # use this because of silly exit codes of the oracle installer
+  # ignore_errors: True
+  failed_when: "'FATAL' in command_result.stdout"
+  vars:
+    gdbname: '{{ item.gdbname }}'
+    sid: '{{ item.sid }}'
+  with_items: '{{ dbs }}'
+
+
+- name: Install oracle-rdbms service
+  template:
+    src: 'oracle-rdbms.service'
+    dest: '/etc/systemd/system/oracle-rdbms.service'
+    mode: 0755
+
+- name: Start oracle-rdbms service
+  service:
+    name: 'oracle-rdbms'
+    state: started

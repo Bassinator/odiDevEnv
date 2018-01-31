@@ -1,18 +1,20 @@
 # Create separate partition via 'helsana.filesystem' role
-weblogic_create_fs: True
-weblogic_fs_size: '39G'
+weblogic_create_fs: False
+weblogic_create_user: False
+#weblogic_fs_size: '39G'
 
 # WebLogic Server version
 weblogic_version: 'FMW12.2.1.3'
 
 # WebLogic Linux user account
 weblogic_user: '{{ installation_os_user }}'
+weblogic_oem_account: '{{ installation_os_user }}'
 
 # WebLogic user comment
 weblogic_user_gecos: '{{ installation_os_user_gecos }}'
 
 # WebLogic installation basei directory
-weblogic_base: '{{ installation_ora_base }}'
+weblogic_base: '{{ oracle_fs_base }}'
 
 # WebLogic Linux group
 weblogic_group: '{{ installation_os_group }}'

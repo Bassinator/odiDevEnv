@@ -1,0 +1,18 @@
+#dbca defaults
+install_dbs: True
+database_config_type: 'SI'
+datafile_jar_location: ''
+datafile_destination: '{{ oracle_base }}/oradata/{{ gdbname }}/'
+recovery_area_destination: '{{ oracle_base }}/fast_recovery_area/{{ gdbname }}'
+storage_type: 'FS'
+database_type: 'MULTIPURPOSE'
+template_file: 'General_Purpose.dbc'
+
+
+dbs:
+  - soadb:
+    gdbname: soadb
+    sid: soadb
+  - odidb:
+    gdbname: odidb
+    sid: odidb

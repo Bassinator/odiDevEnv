@@ -1,0 +1,2345 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<References xmlns="http://xmlns.oracle.com/adf/jndi">
+   <Reference name="PROD - GIS - OGICT50 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OGICT50:1521:OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - GIS - OGICT50 - LOADADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="TEST - BKV - OBKVT01 - BKVSADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>ADVANCED</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ora-OBKVT01:1521:OBKVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>bkvsadm</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>TEST - BKV - OBKVT01 - BKVSADM</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV - ODI REPO - ODPRT01 - DPF_ODI_REPO" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Repositories</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPRT01:1521:ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV - ODI REPO - ODPRT01 - DPF_ODI_REPO</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>DPF_ODI_REPO</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV01 - SINT - SYR_REP - ODPET01 - HF1N4" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPET01:1521:ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV01 - SINT - SYR_REP - ODPET01 - HF1N4</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N4</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - Promos - OOSYT52 - OFFERTESYR_ADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>oosyt52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OOSYT52:1521:oosyt52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OOSYT52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - Promos - OOSYT52 - OFFERTESYR_ADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HKJGT</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="INT - SYRIUS - OSYCT40 - INT TEST KT040" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>osyct40</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Syrius</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OSYCT40:1521:osyct40</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OSYCT40</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>INT - SYRIUS - OSYCT40 - INT TEST KT040</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>hf1ns</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - DeBro - OEVIT51 - DEBROADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OEVIT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OEVIT51:1521:OEVIT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OEVIT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - DeBro - OEVIT51 - DEBROADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1NT</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - ODIVT01 - CTI - HF1N0" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ora-ODIVT01:1521:ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ora-ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - ODIVT01 - CTI - HF1N0</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N0</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV01 - SINT - DPF_EBM - ODPTT01 - HF1N4" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPTT01:1521:ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV01 - SINT - DPF_EBM - ODPTT01 - HF1N4</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N4</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV01 - SINT - SYR_REP - ODPET01 - HF1N0" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ora-ODPET01:1521:ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ora-ODPET01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV01 - SINT - SYR_REP - ODPET01 - HF1N0</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N0</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - GIS - OGICT50 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OGICT50:1521:OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OGICT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - GIS - OGICT50 - LOADADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PROD - GIS - OGISP02 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OGISP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OGISP02:1521:OGISP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OGISP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - GIS - OGISP02 - LOADADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="LCL - Lokale ODI DB - localhost" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceName">
+            <Contents>odidb</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Local</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@//localhost:1521/odidb</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>LCL - Lokale ODI DB - localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>SYSTEM</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPR - SYRIUS - OSYSRT52" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceName">
+            <Contents>osyrt52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Syrius</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@//ora-osyrt52:1521/osyrt52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ora-osyrt52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPR - SYRIUS - OSYSRT52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>hf1nt</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV - eBOX - OAKTE02 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OAKTE02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OAKTE02:1521:OAKTE02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OAKTE02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV - eBOX - OAKTE02 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TQ</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - WEBDB - OWMXT50 - WMXADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>owmxt50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OWMXT50:1521:owmxt50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OWMXT50</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - WEBDB - OWMXT50 - WMXADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="TEST - DeBro - OEVIT01 - DEBROADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OEVIT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OEVIT01:1521:OEVIT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OEVIT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>TEST - DeBro - OEVIT01 - DEBROADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1NS</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="TEST - eBOX - OESUT52 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OESUT52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OESUT52:1521:OESUT52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OESUT52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>TEST - eBOX - OESUT52 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TS</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV - ODI REPO - ODPRT01 - HF1N1" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Repositories</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPRT01:1521:ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPRT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV - ODI REPO - ODPRT01 - HF1N1</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N1</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="LCL - Lokale SoaSuite DB - localhost" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="serviceName">
+            <Contents>soadb</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Local</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@//localhost:1521/soadb</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>LCL - Lokale SoaSuite DB - localhost</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>SYSTEM</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="TEST - smartFIX - OKDST02 - SMARTFIX_MATCHING" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>okdst02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OKDST02:1521:okdst02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OKDST02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>TEST - smartFIX - OKDST02 - SMARTFIX_MATCHING</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TM</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PROD - eBOX - OESUP01 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OESUP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OESUP01:1521:OESUP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OESUP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - eBOX - OESUP01 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1NC</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PROD - eBOX - OAKTP02 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OAKTP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OAKTP02:1521:OAKTP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OAKTP02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - eBOX - OAKTP02 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TT</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV - GIS - OGICT01 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OGICT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OGICT01:1521:OGICT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OGICT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV - GIS - OGICT01 - LOADADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="INT - SYRIUS - OSYCT08 - INT TEST KT008" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>osyct08</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>Syrius</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OSYCT08:1521:osyct08</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OSYCT08</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>INT - SYRIUS - OSYCT08 - INT TEST KT008</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>hf1ns</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - BKV - OBKVT51 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>ADVANCED</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ora-OBKVT51:1521:OBKVT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - BKV - OBKVT51 - LOADADM</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PROD - DeBro - OEVIP01 - DEBROADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OEVIP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OEVIP01:1521:OEVIP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OEVIP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - DeBro - OEVIP01 - DEBROADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1NU</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - SYR_REP - ODPET51 - SYR_SRC_ADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>odpet51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPET51:1521:odpet51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPET51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - SYR_REP - ODPET51 - SYR_SRC_ADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>hf1nt</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - GIS - OGIST01 - LOADADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OGIST01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OGIST01:1521:OGIST01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OGIST01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - GIS - OGIST01 - LOADADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>loadadm</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - smartFIX - OKDST52 - SMARTFIX_MATCHING" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>okdst52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OKDST52:1521:okdst52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OKDST52</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - smartFIX - OKDST52 - SMARTFIX_MATCHING</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TN</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - eBOX - OAKTT51 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OAKTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OAKTT51:1521:OAKTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OAKTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - eBOX - OAKTT51 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TS</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PROD - smartFIX - OKDSP01 - SMARTFIX_MATCHING" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>okdsp01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PROD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OKDSP01:1521:okdsp01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OKDSP01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PROD - smartFIX - OKDSP01 - SMARTFIX_MATCHING</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TP</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - DPF_EBM - ODPTT51 - HF1SH" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ora-ODPTT51:1521:ODPTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ora-ODPTT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - DPF_EBM - ODPTT51 - HF1SH</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1SH</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV01 - SINT - DPF_EBM - ODPTT01 - HF1N0" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPTT01:1521:ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPTT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV01 - SINT - DPF_EBM - ODPTT01 - HF1N0</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N0</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="DEV - smartFIX - OKDSE02 - SMARTFIX_MATCHING" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>okdse02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OKDSE02:1521:okdse02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OKDSE02</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>DEV - smartFIX - OKDSE02 - SMARTFIX_MATCHING</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TL</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="INT - eBOX - OESUT01 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OESUT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OESUT01:1521:OESUT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OESUT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>INT - eBOX - OESUT01 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TS</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="PPRD - eBOX - OESUT51 - ESUITEADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>OESUT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>PPRD Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-OESUT51:1521:OESUT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-OESUT51</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>PPRD - eBOX - OESUT51 - ESUITEADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1TS</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="EDU - SYR_REP - ODPES01 - HKJGT" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPES01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>EDU DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPES01:1521:ODPES01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPES01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>EDU - SYR_REP - ODPES01 - HKJGT</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HKJGT</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="INT - CTI - ODIVT01 - CTIADM" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>DEV - SINT Umsysteme</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODIVT01:1521:ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODIVT01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>INT - CTI - ODIVT01 - CTIADM</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HF1N0</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+   <Reference name="EDU - DPF_EBM - ODPTS01 - HKJGT" className="oracle.jdeveloper.db.adapter.DatabaseProvider" xmlns="">
+      <Factory className="oracle.jdevimpl.db.adapter.DatabaseProviderFactory1212"/>
+      <RefAddresses>
+         <StringRefAddr addrType="role">
+            <Contents/>
+         </StringRefAddr>
+         <StringRefAddr addrType="SavePassword">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OracleConnectionType">
+            <Contents>BASIC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="RaptorConnectionType">
+            <Contents>Oracle</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="sid">
+            <Contents>ODPTS01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NAV_FOLDER">
+            <Contents>EDU DPF</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ExportPasswordMode">
+            <Contents>Key</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="customUrl">
+            <Contents>jdbc:oracle:thin:@ORA-ODPTS01:1521:ODPTS01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="oraDriverType">
+            <Contents>thin</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="NoPasswordConnection">
+            <Contents>TRUE</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="hostname">
+            <Contents>ORA-ODPTS01</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="driver">
+            <Contents>oracle.jdbc.OracleDriver</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="port">
+            <Contents>1521</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="subtype">
+            <Contents>oraJDBC</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="OS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="ConnName">
+            <Contents>EDU - DPF_EBM - ODPTS01 - HKJGT</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="KERBEROS_AUTHENTICATION">
+            <Contents>false</Contents>
+         </StringRefAddr>
+         <StringRefAddr addrType="user">
+            <Contents>HKJGT</Contents>
+         </StringRefAddr>
+      </RefAddresses>
+   </Reference>
+</References>

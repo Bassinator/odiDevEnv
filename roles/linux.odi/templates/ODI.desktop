@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=ODI Studio
+Type=Application
+Comment=Oracle Data Integrator
+Exec={{ odi_install_dir }}/odi/studio/bin/odi
+Terminal=false
+Icon={{ odi_install_dir }}/odi/studio/bin/logo.png
+Categories=Development;

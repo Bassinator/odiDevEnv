@@ -1,0 +1,43 @@
+# oracle installation user
+oracle_os_user: '{{ installation_os_user }}'
+oracle_os_group: '{{ installation_os_group }}'
+os_dba_group: '{{ installation_os_user }}'
+
+oracle_fs_base: '/opt/oracle'
+oracle_download_dir: '{{ oracle_fs_base }}/download'
+oracle_home: '{{ oracle_fs_base }}/app/db/product/12.2.0/dbhome_1'
+oracle_base: '{{ oracle_fs_base }}/app/db'
+oracle_inventory: '{{ oracle_fs_base }}/app/oraInventory'
+oracle_fs_size: '39G'
+oracle_create_fs: True
+
+starter_db_name: 'soadb'
+starter_db_pass: 'oracle'
+sysPassword: '{{ starter_db_pass }}'
+systemPassword: '{{ starter_db_pass }}'
+
+db_location: '/soa/oracle/app/db/oradata'
+
+
+#Software partition configuration for 'helsana.filesystem' role
+oracle_fs_partitions:
+  - type: 'software'
+    name: 'oracle'
+    size: '{{ oracle_fs_size }}'
+    mount_point: '{{ oracle_fs_base }}'
+
+#dbca defaults
+install_dbs: True
+database_config_type: 'SI'
+datafile_jar_location: ''
+datafile_destination: '{{ oracle_base }}/oradata/{{ gdbname }}/'
+recovery_area_destination: '{{ oracle_base }}/fast_recovery_area/{{ gdbname }}'
+storage_type: 'FS'
+database_type: 'MULTIPURPOSE'
+template_file: 'General_Purpose.dbc'
+
+
+dbs:
+  - starterdb:
+    gdbname: starterdb
+    sid: starterdb

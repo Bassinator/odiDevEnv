@@ -1,0 +1,165 @@
+####################################################################
+## Copyright(c) Oracle Corporation 1998,2017. All rights reserved.##
+##                                                                ##
+## Specify values for the variables listed below to customize     ##
+## your installation.                                             ##
+##                                                                ##
+## Each variable is associated with a comment. The comment        ##
+## can help to populate the variables with the appropriate        ##
+## values.                                                        ##
+##                                                                ##
+## IMPORTANT NOTE: This file contains plain text passwords and    ##
+## should be secured to have read permission only by oracle user  ##
+## or db administrator who owns this installation.                ##
+##                                                                ##
+####################################################################
+
+#-------------------------------------------------------------------------------
+# Do not change the following system generated value.
+#-------------------------------------------------------------------------------
+oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_schema_v12.2.0
+
+#-------------------------------------------------------------------------------
+# Specify the installation option.
+# It can be one of the following:
+#   - INSTALL_DB_SWONLY
+#   - INSTALL_DB_AND_CONFIG
+#   - UPGRADE_DB
+#-------------------------------------------------------------------------------
+oracle.install.option=INSTALL_DB_SWONLY
+
+#-------------------------------------------------------------------------------
+# Specify the Unix group to be set for the inventory directory.
+#-------------------------------------------------------------------------------
+UNIX_GROUP_NAME=helsi
+
+#-------------------------------------------------------------------------------
+# Specify the location which holds the inventory files.
+# This is an optional parameter if installing on
+# Windows based Operating System.
+#-------------------------------------------------------------------------------
+INVENTORY_LOCATION={{ oracle_inventory }}
+#-------------------------------------------------------------------------------
+# Specify the complete path of the Oracle Home.
+#-------------------------------------------------------------------------------
+ORACLE_HOME={{ oracle_home }}
+
+#-------------------------------------------------------------------------------
+# Specify the complete path of the Oracle Base.
+#-------------------------------------------------------------------------------
+ORACLE_BASE={{ oracle_base }}
+
+#-------------------------------------------------------------------------------
+# Specify the installation edition of the component.
+#
+# The value should contain only one of these choices.
+
+#   - EE     : Enterprise Edition
+
+#   - SE2     : Standard Edition 2
+
+
+#-------------------------------------------------------------------------------
+
+oracle.install.db.InstallEdition=EE
+###############################################################################
+#                                                                             #
+# PRIVILEGED OPERATING SYSTEM GROUPS                                          #
+# ------------------------------------------                                  #
+# Provide values for the OS groups to which SYSDBA and SYSOPER privileges     #
+# needs to be granted. If the install is being performed as a member of the   #
+# group "dba", then that will be used unless specified otherwise below.       #
+#                                                                             #
+# The value to be specified for OSDBA and OSOPER group is only for UNIX based #
+# Operating System.                                                           #
+#                                                                             #
+###############################################################################
+
+#------------------------------------------------------------------------------
+# The OSDBA_GROUP is the OS group which is to be granted SYSDBA privileges.
+#-------------------------------------------------------------------------------
+oracle.install.db.OSDBA_GROUP={{ os_dba_group }}
+
+#------------------------------------------------------------------------------
+# The OSOPER_GROUP is the OS group which is to be granted SYSOPER privileges.
+# The value to be specified for OSOPER group is optional.
+#------------------------------------------------------------------------------
+oracle.install.db.OSOPER_GROUP={{ os_dba_group }}
+
+#------------------------------------------------------------------------------
+# The OSBACKUPDBA_GROUP is the OS group which is to be granted SYSBACKUP privileges.
+#------------------------------------------------------------------------------
+oracle.install.db.OSBACKUPDBA_GROUP={{ os_dba_group }}
+
+#------------------------------------------------------------------------------
+# The OSDGDBA_GROUP is the OS group which is to be granted SYSDG privileges.
+#------------------------------------------------------------------------------
+oracle.install.db.OSDGDBA_GROUP={{ os_dba_group }}
+
+#------------------------------------------------------------------------------
+# The OSKMDBA_GROUP is the OS group which is to be granted SYSKM privileges.
+#------------------------------------------------------------------------------
+oracle.install.db.OSKMDBA_GROUP={{ os_dba_group }}
+
+#------------------------------------------------------------------------------
+# The OSRACDBA_GROUP is the OS group which is to be granted SYSRAC privileges.
+#------------------------------------------------------------------------------
+oracle.install.db.OSRACDBA_GROUP={{ os_dba_group }}
+
+###############################################################################
+#                                                                             #
+#                               Grid Options                                  #
+#                                                                             #
+###############################################################################
+#------------------------------------------------------------------------------
+# Specify the type of Real Application Cluster Database
+#
+#   - ADMIN_MANAGED: Admin-Managed
+#   - POLICY_MANAGED: Policy-Managed
+#
+# If left unspecified, default will be ADMIN_MANAGED
+#------------------------------------------------------------------------------
+oracle.install.db.rac.configurationType=
+
+#------------------------------------------------------------------------------
+# Value is required only if RAC database type is ADMIN_MANAGED
+#
+# Specify the cluster node names selected during the installation.
+# Leaving it blank will result in install on local server only (Single Instance)
+#
+# Example : oracle.install.db.CLUSTER_NODES=node1,node2
+#------------------------------------------------------------------------------
+oracle.install.db.CLUSTER_NODES=
+
+#------------------------------------------------------------------------------
+# This variable is used to enable or disable RAC One Node install.
+#
+#   - true  : Value of RAC One Node service name is used.
+#   - false : Value of RAC One Node service name is not used.
+#
+# If left blank, it will be assumed to be false.
+#------------------------------------------------------------------------------
+oracle.install.db.isRACOneInstall=false
+
+#------------------------------------------------------------------------------
+# Value is required only if oracle.install.db.isRACOneInstall is true.
+#
+# Specify the name for RAC One Node Service
+#------------------------------------------------------------------------------
+oracle.install.db.racOneServiceName=
+
+#------------------------------------------------------------------------------
+# Value is required only if RAC database type is POLICY_MANAGED
+#
+# Specify a name for the new Server pool that will be configured
+# Example : oracle.install.db.rac.serverpoolName=pool1
+#------------------------------------------------------------------------------
+oracle.install.db.rac.serverpoolName=
+
+#------------------------------------------------------------------------------
+# Value is required only if RAC database type is POLICY_MANAGED
+#
+# Specify a number as cardinality for the new Server pool that will be configured
+# Example : oracle.install.db.rac.serverpoolCardinality=2
+#------------------------------------------------------------------------------
+oracle.install.db.rac.serverpoolCardinality=0

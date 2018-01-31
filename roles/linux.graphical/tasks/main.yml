@@ -1,6 +1,13 @@
 - name: groupinstall Server with GUI
   yum:
     name: "@^Server with GUI"
+  # TODO: find a more elegant way without installing all that stuff.
+  # see https://www.centos.org/forums/viewtopic.php?t=47088
+- name: uninstall openjdk and dependencies (libreoffice & gnome-documents)
+  yum:
+    name: java-1.8.0-openjdk-headless
+    state: absent
+
 - name: install missing mesa-libGL library
   yum:
     name: mesa-libGL
@@ -39,8 +46,55 @@
     state: restarted
   when: gdefaults.changed
 
-- name: add user helsi to gdm group
+#TODO: fix, triggers alway changed
+- name: add user {{ installation_os_user }} to gdm group
   user:
-    name: helsi
+    name: '{{ installation_os_user }}'
     groups: gdm
     append: yes
+
+- name: install X Window Virtual Framebuffer, needed to create firefox profiles
+  yum:
+    name: xorg-x11-server-Xvfb
+    state: present
+
+- name: Install xvfb service
+  template:
+    src: 'xvfb.service'
+    dest: '/etc/systemd/system/xvfb.service'
+    mode: 0755
+
+- name: Start xvfb service
+  service:
+    name: 'xvfb'
+    state: started
+
+- name: create firefox profile
+  become: True
+  become_user: '{{ installation_os_user }}'
+  shell: 'DISPLAY=":99" firefox -CreateProfile "{{ installation_os_user }} /home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}"'
+  args:
+    creates: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}'
+
+- name: set proxy in firefox
+  become: True
+  become_user: '{{ installation_os_user }}'
+  lineinfile:
+    path: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}/prefs.js'
+    regexp: '^user_pref\("network.proxy.type"'
+    line: 'user_pref("network.proxy.type", 2);'
+
+- name: set proxy in firefox
+  become: True
+  become_user: '{{ installation_os_user }}'
+  lineinfile:
+    path: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}/prefs.js'
+    regexp: '^user_pref\("network.proxy.autoconfig_url"'
+    line: 'user_pref("network.proxy.autoconfig_url", "http://proxy/net/proxy.pac");'
+
+
+
+#- name: get helsi firefox settings
+# get settings folder from .mozilla/firefox/profiles.ini Profile0 Path=<random>
+# lineinfile user_pref("network.proxy.autoconfig_url", "http://proxy/net/proxy.pac");
+# lineinfile user_pref("network.proxy.type", 2);

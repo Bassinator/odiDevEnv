@@ -1,0 +1,8 @@
+---
+package_list:
+  - '@^X Window System'
+  - 'gnome-classic-session'
+  - 'gnome-terminal'
+  - 'nautilus-open-terminal'
+  - 'control-center'
+  - 'liberation-mono-fonts'

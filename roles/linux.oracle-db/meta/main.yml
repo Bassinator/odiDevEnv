@@ -1,0 +1,8 @@
+---
+dependencies:
+
+  - role: helsana.filesystem
+    when: oracle_create_fs | bool
+    fs_partitions: '{{ oracle_fs_partitions }}'
+    tags:
+      - 'role::filesystem'

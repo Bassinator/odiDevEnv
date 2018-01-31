@@ -1,7 +1,7 @@
 - name: restart cntlm service
   service:
     name: 'cntlm'
-    state: restarted
+    state: started
 
 
 - name: set http proxy for yum

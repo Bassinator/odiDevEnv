@@ -10,3 +10,6 @@ wgetlog*
 .vagrant
 *.retry
 >>>>>>> 8f99d67e865497806330d30a37a07b509c62f0cd
+.svn
+.secrets
+machines

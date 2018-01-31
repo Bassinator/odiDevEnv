@@ -30,12 +30,10 @@ SOFTWARE_UPDATES_PROXY_USER=
 SOFTWARE_UPDATES_PROXY_PASSWORD=<SECURE VALUE>
 
 #The oracle home location. This can be an existing Oracle Home or a new Oracle Home
-ORACLE_HOME=/soa/oracle/middleware/Oracle_Home
+ORACLE_HOME={{ odi_install_dir }}
 
 #The federated oracle home locations. This should be an existing Oracle Home. Multiple values can be provided as comma seperated values
 FEDERATED_ORACLE_HOMES=
 
 #Set this variable value to the Installation Type selected. e.g. Standalone Installation, Enterprise Installation.
 INSTALL_TYPE=Enterprise Installation
-
-

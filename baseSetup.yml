@@ -11,4 +11,4 @@
     - linux.baseconfig
 #   done with shell provisioner because cntlm setup is needed
 #   to install ansible.
-#    - linux.cntlm //
+    - linux.cntlm

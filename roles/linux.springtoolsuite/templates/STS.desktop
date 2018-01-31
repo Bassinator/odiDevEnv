@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=Spring Tools Suite
+Type=Application
+Exec={{ springtools_install_dir }}/sts-bundle/sts-{{ springtools_version }}/STS
+Terminal=false
+Icon={{ springtools_install_dir }}/sts-bundle/sts-{{ springtools_version }}/icon.xpm
+Categories=Development;

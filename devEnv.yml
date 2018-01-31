@@ -8,12 +8,16 @@
     java_vendor: oracle
     java_development_kit: True
 
-    installation_os_user: 'helsi'
+    # linux.oracle-db actually works only whith theses settings
+    # the must correspondent to the response files
+    installation_os_user: helsi
+    installation_os_group: helsi
     installation_os_user_gecos: 'Development VM Installation user'
-    installation_ora_base: '/opt/oracle'
-    installation_os_group: 'helsi'
+    oracle_fs_base: '/soa/oracle'
 
   vars_files:
+    - db-vars.yml
+    - odi-vars.yml
     - wls-vars.yml
     - secrets.yml
 
@@ -24,7 +28,9 @@
 
 
   roles:
+    - linux.graphical
     - helsana.java
     - helsana.oracle-weblogic
     - linux.oracle-db
-#    - linux.graphical
+    - linux.odi
+    - linux.springtoolsuite

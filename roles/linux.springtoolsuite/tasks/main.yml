@@ -1,0 +1,27 @@
+- name: prepare filesystem
+  file:
+    path: '/soa/tools/eclipse'
+    owner: '{{ installation_os_user }}'
+    group: '{{ installation_os_group }}'
+    state: directory
+
+## because archive does not honor existing extracted files
+- stat:
+    path: '{{ springtools_install_dir }}/sts-bundle/sts-{{ springtools_version }}'
+  register: extracted
+
+- name: install Spring Tool Suite
+  become: True
+  become_user: '{{ installation_os_user }}'
+  unarchive:
+    src: '/media/sf_DPF_Upgrade/12.2.1/{{ springtools_archive }}'
+    dest: '{{ springtools_install_dir }}'
+    remote_src: yes
+  when: extracted.stat.isdir is not defined or not extracted.stat.isdir
+
+- name: install Sprint Tool Suite Menu launcher
+  template:
+    src: 'STS.desktop'
+    dest: '~{{ installation_os_user }}/.local/share/applications/'
+    owner: '{{ installation_os_user }}'
+    group: '{{ installation_os_group }}'

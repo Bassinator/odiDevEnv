@@ -9,10 +9,25 @@ sed --in-place s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config
 rpm --install /media/sf_DPF_Upgrade/12.2.1/cntlm-0.92.3-1.x86_64.rpm
 cp -u /vagrant/tmpfile.cntlm.conf /usr/lib/tmpfiles.d/cntlm.conf
 systemd-tmpfiles --create --remove
-#usermod --home /home/cntlm --move-home cntlm
-#sed --in-place s#'PIDFILE="/var/run/cntlm/cntlmd.pid"'#'PIDFILE="/tmp/cntlmd.pid"'#g /etc/sysconfig/cntlmd
-#yes | cp -rf /vagrant/cntlm.conf /etc/cntlm.conf
-#cat /vagrant/cntlmAuth.txt >> /etc/cntlm.conf
+
+if [[ ! -z "$PASSWORD" ]] && [[ ! -z "$USERNAME" ]]; then
+  echo $PASSWORD | cntlm -H -d ads.hel.kko.ch -u $USERNAME | while read line
+  do
+    if [[ "$line" =~ ^PassNTLMv2.* ]]; then
+      grep -q '^PassNTLMv2' /etc/cntlm.conf &&
+        sed -i "/^PassNTLMv2/ c\\$line" /etc/cntlm.conf ||
+        echo "$line" >> /etc/cntlm.conf;
+      echo "$line" > /vagrant/.secrets;
+    fi
+  done
+else
+  line=$(cat /vagrant/.secrets)
+  grep -q '^PassNTLMv2' /etc/cntlm.conf &&
+    sed -i "/^PassNTLMv2/ c\\$line" /etc/cntlm.conf ||
+  echo "$line" >> /etc/cntlm.conf;
+fi
+
+USERNAME=$(grep -oP --max-count=1 "'.*?'" /vagrant/.secrets | head -1 | cut -c'1,7' --complement)
 
 grep -q '^Header' /etc/cntlm.conf &&
   sed -i "/^Header/ c\Header  User-Agent: Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)" /etc/cntlm.conf ||
@@ -39,27 +54,14 @@ grep -q '^Domain' /etc/cntlm.conf &&
   echo "Domain  ads.hel.kko.ch" >> /etc/cntlm.conf;
 
 
-echo $PASSWORD | cntlm -H -d ads.hel.kko.ch -u $USERNAME | while read line
-do
-  if [[ "$line" =~ ^PassNTLMv2.* ]]; then
-    grep -q '^PassNTLMv2' /etc/cntlm.conf &&
-      sed -i "/^PassNTLMv2/ c\\$line" /etc/cntlm.conf ||
-      echo "$line" >> /etc/cntlm.conf;
-fi
-done
-
-
 systemctl restart cntlm.service
 grep -q '^proxy=' /etc/yum.conf &&
   sed -i '/^proxy=/ c\proxy=http://localhost:3128' /etc/yum.conf ||
   echo "proxy=http://localhost:3128" >> /etc/yum.conf;
 
-
 # need to be done with yum behind proxy, because rpm -i xyz is not aware of proxy
 yes | yum -y install ansible
 
-# update base installation
-# yes | yum -y update
 
 
 

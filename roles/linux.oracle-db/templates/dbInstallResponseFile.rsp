@@ -1,0 +1,116 @@
+
+responseFileVersion=/oracle/assistants/rspfmt_dbca_response_schema_v12.2.0
+
+gdbName={{ gdbname }}
+
+sid={{ sid }}
+
+databaseConfigType={{ database_config_type }}
+
+RACOneNodeServiceName=
+
+policyManaged=false
+
+createServerPool=false
+
+serverPoolName=
+
+cardinality=
+
+force=false
+
+pqPoolName=
+
+pqCardinality=
+
+createAsContainerDatabase=false
+
+numberOfPDBs=0
+
+pdbName=
+
+useLocalUndoForPDBs=true
+
+pdbAdminPassword=
+
+nodelist=
+
+templateName={{ oracle_home }}/assistants/dbca/templates/{{ template_file }}
+
+sysPassword={{ sysPassword }}
+
+systemPassword={{ systemPassword }}
+
+serviceUserPassword=
+
+emConfiguration=
+
+emExpressPort=0
+
+runCVUChecks=false
+
+dbsnmpPassword=
+
+omsHost=
+
+omsPort=0
+
+emUser=
+
+emPassword=
+
+dvConfiguration=false
+
+dvUserName=
+
+dvUserPassword=
+
+dvAccountManagerName=
+
+dvAccountManagerPassword=
+
+olsConfiguration=false
+
+datafileJarLocation={{ datafile_jar_location }}
+
+datafileDestination={{ datafile_destination }}
+
+recoveryAreaDestination={{ recovery_area_destination }}
+
+storageType= {{ storage_type }}
+
+diskGroupName=
+
+asmsnmpPassword=
+
+recoveryGroupName=
+
+characterSet=AL32UTF8
+
+nationalCharacterSet=
+
+registerWithDirService=false
+
+dirServiceUserName=
+
+dirServicePassword=
+
+walletPassword=
+
+listeners=
+
+variables=DB_UNIQUE_NAME={{ item.gdbname }},ORACLE_BASE={{ oracle_base }},PDB_NAME=,DB_NAME={{ item.gdbname }},ORACLE_HOME={{ oracle_home }},SID={{ item.sid }}
+
+initParams=undo_tablespace=UNDOTBS1,processes=300,db_recovery_file_dest_size=8016MB,pga_aggregate_target=773MB,sga_target=2316MB,dispatchers=(PROTOCOL=TCP) (SERVICE={SID}XDB),db_recovery_file_dest={ORACLE_BASE}/fast_recovery_area/{DB_UNIQUE_NAME},db_block_size=8KB,diagnostic_dest={ORACLE_BASE},audit_file_dest={ORACLE_BASE}/admin/{DB_UNIQUE_NAME}/adump,db_create_file_dest={ORACLE_BASE}/oradata/{DB_UNIQUE_NAME}/,local_listener=LISTENER_ODIDB,compatible=12.2.0,db_name=odidb,audit_trail=db,remote_login_passwordfile=EXCLUSIVE,open_cursors=300
+
+variablesFile=
+
+sampleSchema=false
+
+memoryPercentage=40
+
+databaseType={{ database_type }}
+
+automaticMemoryManagement=false
+
+totalMemory=0
