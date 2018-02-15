@@ -115,7 +115,7 @@
 #  failed_when: "'Successfully Configured Software.' not in command_result.stdout"
 
 
-- name: Create '{{ item.gdbname }}' Database
+- name: Create Databases
   become: True
   become_user: '{{ oracle_os_user }}'
   when: install_dbs

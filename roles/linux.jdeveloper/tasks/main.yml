@@ -1,0 +1,74 @@
+#- name: prepare filesystem
+#  file:
+#    path: '/soa/tools/eclipse'
+#    owner: '{{ installation_os_user }}'
+#    group: '{{ installation_os_group }}'
+#    state: directory
+
+## because archive does not honor existing extracted files
+- stat:
+    path: '{{ oracle_download_dir }}/jdev_suite_122130.jar'
+  register: extracted
+
+- name: extract JDeveloper archive
+  become: True
+  become_user: '{{ installation_os_user }}'
+  unarchive:
+    src: '/media/sf_DPF_Upgrade/12.2.1/{{ item }}'
+    dest: '{{ oracle_download_dir }}'
+    remote_src: yes
+  when: extracted.stat.isdir is not defined or not extracted.stat.isdir
+  with_items:
+    - OracleJDeveloper12.2.1.3.0_1of2.zip
+    - OracleJDeveloper12.2.1.3.0_2of2.zip
+
+- name: copy response file
+  template:
+    src: 'fmw_12.2.1.3.0_jdev_respones_file.rsp'
+    dest: '{{ oracle_download_dir }}/'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
+
+- name: install JDeveloper
+  command: 'java -jar {{ oracle_download_dir }}/jdev_suite_122130.jar -silent -responseFile {{ oracle_download_dir }}/fmw_12.2.1.3.0_jdev_respones_file.rsp'
+  args:
+    creates: '{{ oracle_home }}/jdeveloper/'
+
+- name: copy JDeveloper config
+  unarchive:
+    src: '/media/sf_DPF_Upgrade/12.2.1/jdeveloper_config.tar.gz'
+    dest: '~/'
+    remote_src: yes
+  become_user: '{{  oracle_os_user }}'
+
+- name: create soamds directory in developer home
+  file:
+    path: '~/jdeveloper/soamds'
+    state: directory
+    mode: 0755
+  become_user: '{{  oracle_os_user }}'
+
+
+- name: create directory for soamds synlink
+  file:
+    dest: '{{ oracle_home }}/soa/integration/seed/'
+    owner: '{{  oracle_os_user }}'
+    state: 'directory'
+    mode: 0755
+
+# TODO: {{ oracle_home }}/soa/integration/seed/apps existiert nicht ???
+- name: create symlink to soamds directory
+  file:
+    src: '~/jdeveloper/soamds'
+    dest: '{{ oracle_home }}/soa/integration/seed/apps'
+    owner: '{{  oracle_os_user }}'
+    group: '{{  oracle_os_group }}'
+    state: 'link'
+  become_user: '{{  oracle_os_user }}'
+
+#- name: install Sprint Tool Suite Menu launcher
+#  template:
+#    src: 'STS.desktop'
+#    dest: '~{{ installation_os_user }}/.local/share/applications/'
+#    owner: '{{ installation_os_user }}'
+#    group: '{{ installation_os_group }}'

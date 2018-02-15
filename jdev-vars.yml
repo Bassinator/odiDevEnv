@@ -1,0 +1,5 @@
+oracle_fs_base: '/soa/oracle'
+
+installation_os_user: 'helsi'
+oracle_os_user: '{{ installation_os_user }}'
+oracle_os_group: 'helsi'

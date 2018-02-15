@@ -10,6 +10,12 @@
     path: '/etc/environment'
     line: '{{ item }}'
   with_items: '{{ helsana_proxy_settings }}'
+- name: Mount up GuestAdditions
+  mount:
+    path: '/media/GuestAdditions'
+    src: '/dev/sr0'
+    fstype: iso9660
+    state: mounted
 
 - name: add installation user group
   group:
@@ -23,6 +29,7 @@
     groups:
       - '{{ installation_os_group }}'
       - 'wheel'
+    append: yes
 
 - name: Add Helsana repository
   yum_repository:

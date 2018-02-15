@@ -6,6 +6,11 @@ package_list:
   - 'hel-rootca' # helsna root CA
   - 'unzip'
   - 'iftop'
+  - 'bzip2'
+  - 'kernel-uek-devel-4.1.12-112.14.1.el7uek'
+  - 'gcc'
+  - 'make'
+  - 'perl'
 
 helsana_ansible_roles:
   - 'ansible-java'

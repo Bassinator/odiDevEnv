@@ -30,7 +30,7 @@
   command: systemctl isolate graphical.target
   when: graphical.stdout != "active"
 - name: upload gnome default settings
-  copy:
+  template:
     src: 60_helsana.default.gschema.override
     dest: /usr/share/glib-2.0/schemas/60_helsana.default.gschema.override
     owner: root
@@ -57,11 +57,12 @@
   yum:
     name: xorg-x11-server-Xvfb
     state: present
-
 - name: Install xvfb service
-  template:
+  copy:
     src: 'xvfb.service'
     dest: '/etc/systemd/system/xvfb.service'
+    owner: root
+    group: root
     mode: 0755
 
 - name: Start xvfb service

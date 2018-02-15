@@ -1,1 +1,3 @@
 installation_os_user: helsi
+
+tastatur_layout: "('xkb', 'ch+de_nodeadkeys')"

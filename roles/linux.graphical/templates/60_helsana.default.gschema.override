@@ -1,8 +1,8 @@
 [org.gnome.desktop.input-sources]
-sources=[('xkb', 'ch+de_mac')]
+sources=[{{ tastatur_layout }}]
 
 [org.gnome.desktop.lockdown]
-disable-lock-screen="true"
+disable-lock-screen=true
 
 [org.gnome.desktop.session]
 idle-delay="0"

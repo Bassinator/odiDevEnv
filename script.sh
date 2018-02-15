@@ -55,9 +55,14 @@ grep -q '^Domain' /etc/cntlm.conf &&
 
 
 systemctl restart cntlm.service
+
 grep -q '^proxy=' /etc/yum.conf &&
   sed -i '/^proxy=/ c\proxy=http://localhost:3128' /etc/yum.conf ||
   echo "proxy=http://localhost:3128" >> /etc/yum.conf;
+
+grep -q '^proxy=' /etc/environment &&
+  sed -i '/^proxy=/ c\proxy=http://localhost:3128' /etc/environmen ||
+  echo "proxy=http://localhost:3128" >> /etc/environmen;
 
 # need to be done with yum behind proxy, because rpm -i xyz is not aware of proxy
 yes | yum -y install ansible

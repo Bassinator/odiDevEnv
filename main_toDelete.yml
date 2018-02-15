@@ -5,11 +5,6 @@
 - name: set keymap
   command: localectl set-keymap ch-de_mac
   when: "'ch-de_mac' not in locale.stdout"
-- name: set http_proxy environment variables
-  lineinfile:
-    path: '/etc/environment'
-    line: '{{ item }}'
-  with_items: '{{ helsana_proxy_settings }}'
 
 - name: add gropu helsi
   group:

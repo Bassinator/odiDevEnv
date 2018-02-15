@@ -19,6 +19,7 @@
     - db-vars.yml
     - odi-vars.yml
     - wls-vars.yml
+    - jdev-vars.yml
     - secrets.yml
 
   pre_tasks:
@@ -29,8 +30,9 @@
 
   roles:
     - linux.graphical
-    - helsana.java
-    - helsana.oracle-weblogic
-    - linux.oracle-db
-    - linux.odi
-    - linux.springtoolsuite
+#    - helsana.java
+#    - linux.oracle-db
+#    - linux.odi
+#    - linux.springtoolsuite
+#    - helsana.oracle-weblogic
+#    - linux.jdeveloper

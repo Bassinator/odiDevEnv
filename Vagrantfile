@@ -47,6 +47,9 @@ Vagrant.configure("2") do |config|
 
     new_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-ora.vmdk'
     old_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-disk2.vmdk'
+    vb.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 0, '--device', 0, '--type', 'dvddrive', '--medium', 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso']
+
+
 
     unless File.exist?(new_second_disk)
       vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 1, '--device', 0, '--type', 'hdd', '--medium', 'none']

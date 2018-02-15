@@ -1,0 +1,6 @@
+oracle_fs_base: '/opt/oracle'
+oracle_download_dir: '{{ oracle_fs_base }}/download'
+oracle_home: '{{ oracle_fs_base }}/middleware'
+
+oracle_os_user: 'oracle'
+oracle_os_group: 'oracle'
