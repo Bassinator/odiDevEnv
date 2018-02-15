@@ -29,10 +29,11 @@
 
 
   roles:
-    - linux.graphical
-#    - helsana.java
-#    - linux.oracle-db
-#    - linux.odi
-#    - linux.springtoolsuite
+    - linux.graphical # long running
+    - helsana.java
+    - linux.oracle-db # long running
+    - linux.odi # long running
+    - linux.springtoolsuite
+#    - helsana.oracle-weblogic
 #    - helsana.oracle-weblogic
 #    - linux.jdeveloper

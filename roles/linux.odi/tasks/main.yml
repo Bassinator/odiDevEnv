@@ -29,6 +29,32 @@
     dest: '~{{ oracle_os_user }}/.odi/oracledi/'
     owner: '{{ oracle_os_user }}'
     group: '{{ oracle_os_group }}'
+- name: copy database driver
+  copy:
+    src: '/media/sf_DPF_Upgrade/12.2.1/odiLibs/'
+    dest: /home/{{ oracle_os_user }}/.odi/oraledi/userlib
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'
+    mode: 644
+
+# install odi patch
+- stat:
+    path: '{{ oracle_download_dir }}/26913527'
+  register: extracted
+- name: extract odi patch
+  unarchive:
+    src:  /media/sf_DPF_Upgrade/12.2.1/odiPatches/p26913527_122130_Generic.zip
+    dest: '{{ oracle_download_dir }}/'
+    owner: '{{ oracle_os_user }}'
+    group: '{{ oracle_os_group }}'
+  register: patch
+  when: extracted.stat.isdir is not defined or not extracted.stat.isdir
+- name: apply odi patch
+  command: '{{ odi_install_dir }}/OPatch/opatch apply -silent -oh {{ odi_install_dir }}'
+  args:
+    chdir: '{{ oracle_download_dir }}/26913527/'
+  become_user: '{{  oracle_os_user }}'
+  when: patch is defined and patch.changed
 
 
 - name: install sql developer

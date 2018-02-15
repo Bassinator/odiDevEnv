@@ -37,7 +37,7 @@ Vagrant.configure("2") do |config|
 
     # following fixes a bug see https://github.com/hashicorp/vagrant/issues/7648v.gui = true
     vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
-    vb.memory = 4096
+    vb.memory = 8192
     vb.customize ['modifyvm', :id, '--accelerate3d', 'on']
     # 3d acceleration only works if started with gui. Needed vor ODI
     vb.gui = true
@@ -77,7 +77,7 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "ansible_local" do |ansible2|
-    ansible2.verbose = "v"
+    ansible2.verbose = "vvv"
     ansible2.playbook = "devEnv.yml"
     ansible2.install = true
   end

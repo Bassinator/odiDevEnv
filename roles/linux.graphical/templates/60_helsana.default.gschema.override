@@ -5,7 +5,7 @@ sources=[{{ tastatur_layout }}]
 disable-lock-screen=true
 
 [org.gnome.desktop.session]
-idle-delay="0"
+idle-delay=0
 
 [org.gnome.nautilus.preferences]
 executable-text-activation="ask"
