@@ -7,13 +7,36 @@
   yum:
     name: java-1.8.0-openjdk-headless
     state: absent
-
 - name: install missing mesa-libGL library
   yum:
     name: mesa-libGL
 - name: install missing mesa-libEGL library
   yum:
     name: mesa-libEGL
+
+- name: update packages
+  yum:
+    name: '*'
+    state: latest
+  when: packages == "latest"
+  register: update
+- name: check if kernel updated
+  shell: |
+    LAST_KERNEL=$(rpm -q --last kernel-uek | perl -pe 's/^kernel-uek-(\S+).*/$1/' | head -1 );
+    CURRENT_KERNEL=$(uname -r);
+    if [ $LAST_KERNEL != $CURRENT_KERNEL ]; then echo 'reboot'; else echo 'no'; fi
+  ignore_errors: true
+  changed_when: false
+  register: reboot_hint
+- name: mark to vagrant reload
+  file:
+    path: /vagrant/.end_play
+    state: touch
+  when: reboot_hint.stdout.find("reboot") != -1
+- name: stop provisioning because krenel updated
+  meta: end_play
+  when: reboot_hint.stdout.find("reboot") != -1
+
 - name: get default runlevel
   command: systemctl get-default
   register: runlevel
@@ -25,10 +48,11 @@
   command: systemctl is-active graphical.target
   register: graphical
   changed_when: False
-  ignore_errors: yes #there is a bug, that exit code not 0 if inactive
+  ignore_errors: yes #there is a "bug", that exit code not 0 if inactive
 - name: Switch to graphical runlevel
   command: systemctl isolate graphical.target
   when: graphical.stdout != "active"
+
 - name: upload gnome default settings
   template:
     src: 60_helsana.default.gschema.override
@@ -46,11 +70,11 @@
     state: restarted
   when: gdefaults.changed
 
-#TODO: fix, triggers alway changed
 - name: add user {{ installation_os_user }} to gdm group
   user:
     name: '{{ installation_os_user }}'
-    groups: gdm
+    group: '{{ installation_os_group }}'
+    groups: '{{ installation_os_group }}, gdm'
     append: yes
 
 - name: install X Window Virtual Framebuffer, needed to create firefox profiles
@@ -64,38 +88,13 @@
     owner: root
     group: root
     mode: 0755
-
 - name: Start xvfb service
   service:
     name: 'xvfb'
     state: started
-
 - name: create firefox profile
   become: True
   become_user: '{{ installation_os_user }}'
   shell: 'DISPLAY=":99" firefox -CreateProfile "{{ installation_os_user }} /home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}"'
   args:
     creates: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}'
-
-- name: set proxy in firefox
-  become: True
-  become_user: '{{ installation_os_user }}'
-  lineinfile:
-    path: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}/prefs.js'
-    regexp: '^user_pref\("network.proxy.type"'
-    line: 'user_pref("network.proxy.type", 2);'
-
-- name: set proxy in firefox
-  become: True
-  become_user: '{{ installation_os_user }}'
-  lineinfile:
-    path: '/home/{{ installation_os_user }}/.mozilla/firefox/{{ installation_os_user }}/prefs.js'
-    regexp: '^user_pref\("network.proxy.autoconfig_url"'
-    line: 'user_pref("network.proxy.autoconfig_url", "http://proxy/net/proxy.pac");'
-
-
-
-#- name: get helsi firefox settings
-# get settings folder from .mozilla/firefox/profiles.ini Profile0 Path=<random>
-# lineinfile user_pref("network.proxy.autoconfig_url", "http://proxy/net/proxy.pac");
-# lineinfile user_pref("network.proxy.type", 2);

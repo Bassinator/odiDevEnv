@@ -1,0 +1,43 @@
+---
+- name: odiDevEnv
+  hosts: all
+  become: true
+  become_method: sudo
+
+  vars:
+    #TODO: dont know why this is not working within thre roles part???
+    java_vendor: oracle
+    java_development_kit: True
+
+    # linux.oracle-db actually works only whith theses settings
+    # the must correspondent to the response files
+    # installation_os_user: helsi
+    # installation_os_group: helsi
+    # installation_os_user_gecos: 'Development VM Installation user'
+    # oracle_fs_base: '/soa/oracle'
+
+  vars_files:
+    - db-vars.yml
+    #- odi-vars.yml
+    - wls-vars.yml
+    #- jdev-vars.yml
+
+  pre_tasks:
+  - lvg:
+      vg: vg00
+      pvs: /dev/sdb
+
+
+  roles:
+    - { role: linux.graphical, installation_os_user: helsi, installation_os_group: helsi, packages: specified }  # long running packages: latest|specified
+    - { role: helsana.java, java_vendor: 'oracle', java_development_kit: True }
+    - { role: linux.oracle-db, oracle_os_user: helsi, oracle_os_group: helsi, oracle_fs_base: /soa/oracle }  # long running
+    - { role: linux.sqldeveloper, installation_os_user: helsi, installation_os_group: helsi }
+  #  - { role: linux.odi, installation_os_user: helsi, installation_os_group: helsi }  # long running
+    - { role: linux.springtoolsuite, installation_os_user: helsi, installation_os_group: helsi }  # long running
+    #- linux.springtoolsuite
+    - { role: helsana.oracle-weblogic, installation_os_user: helsi, installation_os_group: helsi }  # long running
+    - { role: linux.jdeveloper, installation_os_user: helsi, installation_os_group: helsi, oracle_fs_base: '/soa/oracle' }  # long running
+
+    #- helsana.oracle-weblogic
+    #- linux.jdeveloper

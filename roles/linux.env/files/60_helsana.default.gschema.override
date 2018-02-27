@@ -1,8 +1,7 @@
 [org.gnome.desktop.input-sources]
-#sources=[('xkb', 'ch+de_mac')]
-sources=[('xkb', 'ch+de_nodeadkeys')]
+sources=[('xkb', 'ch+de_mac')]
 
-[org.desktop.lockdown]
+[org.gnome.desktop.lockdown]
 disable-lock-screen="true"
 
 [org.gnome.desktop.session]

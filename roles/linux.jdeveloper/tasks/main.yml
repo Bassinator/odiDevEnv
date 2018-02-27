@@ -26,33 +26,42 @@
   template:
     src: 'fmw_12.2.1.3.0_jdev_respones_file.rsp'
     dest: '{{ oracle_download_dir }}/'
-    owner: '{{  oracle_os_user }}'
-    group: '{{  oracle_os_group }}'
+    owner: '{{  installation_os_user }}'
+    group: '{{  installation_os_group }}'
 
 - name: install JDeveloper
   command: 'java -jar {{ oracle_download_dir }}/jdev_suite_122130.jar -silent -responseFile {{ oracle_download_dir }}/fmw_12.2.1.3.0_jdev_respones_file.rsp'
   args:
-    creates: '{{ oracle_home }}/jdeveloper/'
+    creates: '{{ jdev_install_dir }}/jdev/bin/jdev'
+  become_user: '{{  installation_os_user }}'
+
+
+- name: Add JDeveloper Studio to Launcher
+  template:
+    src: 'JDeveloper.desktop'
+    dest: '~{{ installation_os_user }}/.local/share/applications/'
+    owner: '{{  installation_os_user }}'
+    group: '{{  installation_os_group }}'
 
 - name: copy JDeveloper config
   unarchive:
     src: '/media/sf_DPF_Upgrade/12.2.1/jdeveloper_config.tar.gz'
     dest: '~/'
     remote_src: yes
-  become_user: '{{  oracle_os_user }}'
+  become_user: '{{  installation_os_user }}'
 
 - name: create soamds directory in developer home
   file:
     path: '~/jdeveloper/soamds'
     state: directory
     mode: 0755
-  become_user: '{{  oracle_os_user }}'
+  become_user: '{{  installation_os_user }}'
 
 
 - name: create directory for soamds synlink
   file:
     dest: '{{ oracle_home }}/soa/integration/seed/'
-    owner: '{{  oracle_os_user }}'
+    owner: '{{  installation_os_user }}'
     state: 'directory'
     mode: 0755
 
@@ -61,14 +70,7 @@
   file:
     src: '~/jdeveloper/soamds'
     dest: '{{ oracle_home }}/soa/integration/seed/apps'
-    owner: '{{  oracle_os_user }}'
-    group: '{{  oracle_os_group }}'
+    owner: '{{  installation_os_user }}'
+    group: '{{  installation_os_group }}'
     state: 'link'
-  become_user: '{{  oracle_os_user }}'
-
-#- name: install Sprint Tool Suite Menu launcher
-#  template:
-#    src: 'STS.desktop'
-#    dest: '~{{ installation_os_user }}/.local/share/applications/'
-#    owner: '{{ installation_os_user }}'
-#    group: '{{ installation_os_group }}'
+  become_user: '{{  installation_os_user }}'

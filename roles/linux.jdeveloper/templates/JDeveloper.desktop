@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=JDeveloper
+Type=Application
+Comment=Oracle JDeveloper
+Exec={{ jdev_install_dir }}/jdev/bin/jdev
+Terminal=false
+Icon={{ jdev_install_dir }}/jdev/bin/logo.png
+Categories=Development;

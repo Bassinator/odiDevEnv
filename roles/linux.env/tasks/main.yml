@@ -21,15 +21,20 @@
   group:
     name: '{{ installation_os_group }}'
 
-- name: add user helsi to installation user group and wheel
+- name: add user to installation user group and wheel
   user:
     name: '{{ installation_os_user }}'
-    password: '$6$TRqTfPBIgHz.qKFV$1OkNHp1nlDqVYKi5e1nppUozu38aRu5E7pfrs3EXk31eUDK.muOYQWMQ87XHsxCZC8hMZ/eq6sBFl0kIwwmmN/'
+    password: '{{ installation_os_user_pw }}'
     shell: /bin/bash
     groups:
       - '{{ installation_os_group }}'
       - 'wheel'
     append: yes
+
+- name: allow paswordless sudo
+  template:
+    src: 'user.sudoers'
+    dest: '/etc/sudoers.d/{{ installation_os_user }}'
 
 - name: Add Helsana repository
   yum_repository:
@@ -58,8 +63,3 @@
     state: installed
   with_items:
     "{{ package_list }}"
-
-- name: Patch ansible-oracle-weblogic role
-  patch:
-    src: weblogic-role.patch
-    dest: /etc/ansible/roles/helsana.oracle-weblogic/tasks/main.yml

@@ -5,4 +5,3 @@ oracle_os_group: oracle
 oracle_fs_base: '/opt/oracle'
 oracle_download_dir: '{{ oracle_fs_base }}/download'
 odi_install_dir: '{{ oracle_fs_base }}/middleware'
-sqldeveloper_version: '17.3.1.279.0537'

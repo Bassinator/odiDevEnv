@@ -1,7 +1,7 @@
 # oracle installation user
-oracle_os_user: '{{ installation_os_user }}'
-oracle_os_group: '{{ installation_os_group }}'
-os_dba_group: '{{ installation_os_user }}'
+oracle_os_user: 'oracle'
+oracle_os_group: 'oracle'
+os_dba_group: '{{ oracle_os_group }}'
 
 oracle_fs_base: '/opt/oracle'
 oracle_download_dir: '{{ oracle_fs_base }}/download'

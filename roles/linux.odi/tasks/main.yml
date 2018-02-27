@@ -9,32 +9,32 @@
   template:
     src: 'odiInstallResponseFile.rsp'
     dest: '{{ oracle_download_dir }}/'
-    owner: '{{  oracle_os_user }}'
-    group: '{{  oracle_os_group }}'
+    owner: '{{  installation_os_user }}'
+    group: '{{  installation_os_group }}'
 - name: install ODI
   become: True
-  become_user: '{{ oracle_os_user }}'
+  become_user: '{{ installation_os_user }}'
   command: 'java -jar /media/sf_DPF_Upgrade/12.2.1/fmw_12.2.1.3.0_odi.jar -silent -responseFile {{ oracle_download_dir }}/odiInstallResponseFile.rsp'
   args:
     creates: '{{ odi_install_dir }}/odi/'
 - name: Add Odi Studio to Launcher
   template:
     src: 'Odi.desktop'
-    dest: '~{{ oracle_os_user }}/.local/share/applications/'
-    owner: '{{  oracle_os_user }}'
-    group: '{{  oracle_os_group }}'
+    dest: '~{{ installation_os_user }}/.local/share/applications/'
+    owner: '{{  installation_os_user }}'
+    group: '{{  installation_os_group }}'
 - name: import repo connections
   template:
     src: 'snps_login_work_12.xml'
-    dest: '~{{ oracle_os_user }}/.odi/oracledi/'
-    owner: '{{ oracle_os_user }}'
-    group: '{{ oracle_os_group }}'
+    dest: '~{{ installation_os_user }}/.odi/oracledi/'
+    owner: '{{ installation_os_user }}'
+    group: '{{ installation_os_group }}'
 - name: copy database driver
   copy:
     src: '/media/sf_DPF_Upgrade/12.2.1/odiLibs/'
-    dest: /home/{{ oracle_os_user }}/.odi/oraledi/userlib
-    owner: '{{ oracle_os_user }}'
-    group: '{{ oracle_os_group }}'
+    dest: /home/{{ installation_os_user }}/.odi/oraledi/userlib
+    owner: '{{ installation_os_user }}'
+    group: '{{ installation_os_group }}'
     mode: 644
 
 # install odi patch
@@ -45,33 +45,13 @@
   unarchive:
     src:  /media/sf_DPF_Upgrade/12.2.1/odiPatches/p26913527_122130_Generic.zip
     dest: '{{ oracle_download_dir }}/'
-    owner: '{{ oracle_os_user }}'
-    group: '{{ oracle_os_group }}'
+    owner: '{{ installation_os_user }}'
+    group: '{{ installation_os_group }}'
   register: patch
   when: extracted.stat.isdir is not defined or not extracted.stat.isdir
 - name: apply odi patch
   command: '{{ odi_install_dir }}/OPatch/opatch apply -silent -oh {{ odi_install_dir }}'
   args:
     chdir: '{{ oracle_download_dir }}/26913527/'
-  become_user: '{{  oracle_os_user }}'
+  become_user: '{{  installation_os_user }}'
   when: patch is defined and patch.changed
-
-
-- name: install sql developer
-  yum:
-    name: /media/sf_DPF_Upgrade/12.2.1/sqldeveloper-{{ sqldeveloper_version }}-1.noarch.rpm
-    state: present
-- name: create sqldeveloper config directories
-  file:
-    path: /home/{{ oracle_os_user }}/.sqldeveloper/system{{ sqldeveloper_version }}/o.jdeveloper.db.connection/
-    state: directory
-    mode: 0755
-    recurse: True
-    owner: '{{ oracle_os_user }}'
-    group: '{{ oracle_os_group }}'
-- name: import sqldeveloper connections
-  copy:
-    src: sqldeveloper_connections.xml
-    dest: /home/{{ oracle_os_user }}/.sqldeveloper/system{{ sqldeveloper_version }}/o.jdeveloper.db.connection/connections.xml
-    owner: '{{ oracle_os_user }}'
-    group: '{{ oracle_os_group }}'

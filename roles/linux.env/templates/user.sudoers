@@ -1,0 +1,1 @@
+%{{ installation_os_user }} ALL=(ALL) NOPASSWD: ALL

@@ -9,6 +9,7 @@ sed --in-place s/SELINUX=enforcing/SELINUX=permissive/g /etc/selinux/config
 rpm --install /media/sf_DPF_Upgrade/12.2.1/cntlm-0.92.3-1.x86_64.rpm
 cp -u /vagrant/tmpfile.cntlm.conf /usr/lib/tmpfiles.d/cntlm.conf
 systemd-tmpfiles --create --remove
+systemctl enable cntlm
 
 if [[ ! -z "$PASSWORD" ]] && [[ ! -z "$USERNAME" ]]; then
   echo $PASSWORD | cntlm -H -d ads.hel.kko.ch -u $USERNAME | while read line
@@ -53,22 +54,21 @@ grep -q '^Domain' /etc/cntlm.conf &&
   sed -i "/^Domain/ c\Domain  ads.hel.kko.ch" /etc/cntlm.conf ||
   echo "Domain  ads.hel.kko.ch" >> /etc/cntlm.conf;
 
-
 systemctl restart cntlm.service
 
 grep -q '^proxy=' /etc/yum.conf &&
   sed -i '/^proxy=/ c\proxy=http://localhost:3128' /etc/yum.conf ||
   echo "proxy=http://localhost:3128" >> /etc/yum.conf;
 
-grep -q '^proxy=' /etc/environment &&
-  sed -i '/^proxy=/ c\proxy=http://localhost:3128' /etc/environmen ||
-  echo "proxy=http://localhost:3128" >> /etc/environmen;
 
 # need to be done with yum behind proxy, because rpm -i xyz is not aware of proxy
 yes | yum -y install ansible
 
-
-
+# If ox marked to resume provisioning, remove the maker. Resuming now provisioning now ...
+if [ -f /vagrant/.end_play ]; then
+  echo "hoi";
+  rm /vagrant/.end_play;
+fi
 
 
 #yes | yum install -y hel-rootca

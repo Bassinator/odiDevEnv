@@ -4,12 +4,10 @@
     owner: '{{ oracle_os_user }}'
     group: '{{ oracle_os_group }}'
 
-- name: install requiered packages
+- name: install prerequisites package
   yum:
-    name: "{{ item }}"
+    name: 'oracle-database-server-12cR2-preinstall'
     state: installed
-  with_items:
-    "{{ package_list }}"
 
 - name: Create download directory
   file:
@@ -40,7 +38,6 @@
     - { domain: '*', limit_type: 'hard', limit_item: 'nofile', value: '65536'}
     - { domain: '*', limit_type: 'soft', limit_item: 'stack', value: '10240'}
 
-
 ## because archive does not honor existing extracted files with unzip
 - stat:
     path: '{{ oracle_download_dir }}/database'
@@ -53,7 +50,6 @@
     owner: '{{  oracle_os_user }}'
     group: '{{  oracle_os_group }}'
   when: extracted.stat.isdir is not defined or not extracted.stat.isdir
-
 
 - name: Copy sw installation response file
   template:
@@ -114,7 +110,6 @@
   #ignore_errors: True
 #  failed_when: "'Successfully Configured Software.' not in command_result.stdout"
 
-
 - name: Create Databases
   become: True
   become_user: '{{ oracle_os_user }}'
@@ -131,6 +126,12 @@
     sid: '{{ item.sid }}'
   with_items: '{{ dbs }}'
 
+- name: Configure Databases to autostart when rdbms starts
+  lineinfile:
+    path: /etc/oratab
+    regexp: '^{{ item.sid }}:'
+    line: '{{ item.sid }}:{{ oracle_home }}:Y'
+  with_items: '{{ dbs }}'
 
 - name: Install oracle-rdbms service
   template:
@@ -142,3 +143,4 @@
   service:
     name: 'oracle-rdbms'
     state: started
+    enabled: yes

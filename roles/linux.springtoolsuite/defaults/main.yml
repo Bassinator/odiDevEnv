@@ -1,7 +1,3 @@
-installation_os_user: helsi
-installation_os_group: helsi
-
-
 springtools_version: '3.9.1.RELEASE'
 springtools_archive: 'spring-tool-suite-{{ springtools_version }}-e4.7.1a-linux-gtk-x86_64.tar.gz'
 springtools_install_dir: '/soa/tools/eclipse/'

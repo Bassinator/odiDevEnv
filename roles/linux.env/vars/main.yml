@@ -10,5 +10,7 @@ helsana_ansible_roles:
   - 'ansible-oracle-weblogic'
 
 helsana_proxy_settings:
-  - 'http_proxy=http://proxy-surf.hel.kko.ch:8080'
+#  - 'http_proxy=http://proxy-surf.hel.kko.ch:8080'
+  - 'http_proxy=http://localhost:3128'
+  - 'https_proxy=http://localhost:3128'
 #  - 'https_proxy=https://proxy-surf.hel.kko.ch:8080'

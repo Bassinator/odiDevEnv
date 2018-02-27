@@ -33,7 +33,7 @@ Vagrant.configure("2") do |config|
 
   config.vm.provider 'virtualbox' do |vb|
     vb.name = "SPF Development VM"
-
+    user_account = ENV['USERNAME']
 
     # following fixes a bug see https://github.com/hashicorp/vagrant/issues/7648v.gui = true
     vb.customize ['modifyvm', :id, '--cableconnected1', 'on']
@@ -45,8 +45,8 @@ Vagrant.configure("2") do |config|
     vb.customize ['modifyvm', :id, '--vram', '64']
     vb.customize ['modifyvm', :id, '--clipboard', 'bidirectional']
 
-    new_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-ora.vmdk'
-    old_second_disk = 'C:\Users\EX3NS\VirtualBox VMs\SPF Development VM\OL7U4_x86_64-disk2.vmdk'
+    new_second_disk = 'C:\Users\\' + user_account + '\VirtualBox VMs\\' + vb.name + '\OL7U4_x86_64-ora.vmdk'
+    old_second_disk = 'C:\Users\\' + user_account + '\VirtualBox VMs\\' + vb.name + '\OL7U4_x86_64-disk2.vmdk'
     vb.customize ['storageattach', :id, '--storagectl', 'IDE Controller', '--port', 0, '--device', 0, '--type', 'dvddrive', '--medium', 'C:\Program Files\Oracle\VirtualBox\VBoxGuestAdditions.iso']
 
 
@@ -71,14 +71,28 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell" , path: "script.sh", env: {"USERNAME" =>username, "PASSWORD" => password}
 
   config.vm.provision "ansible_local" do |ansible1|
-#    ansible1.verbose = "v"
-    ansible1.playbook = "baseSetup.yml"
+    ansible1.verbose = "v"
+    ansible1.playbook = "env.yml"
     ansible1.install = true
   end
 
   config.vm.provision "ansible_local" do |ansible2|
-    ansible2.verbose = "vvv"
-    ansible2.playbook = "devEnv.yml"
+    ansible2.verbose = "v"
+    ansible2.playbook = "client.yml"
     ansible2.install = true
   end
+
+  config.vm.provision "shell", privileged: false, inline: <<-EOF
+    if [ -f /vagrant/.end_play ]; then
+      echo "====================================";
+      echo "Vagrant Box updated. REBOOT required";
+      echo "  type: vagrant reload --provision  ";
+      echo "to finish provisioning process      ";
+      echo "====================================";
+    else
+      echo "Vagrant Box provisioned!"
+    fi
+  EOF
+
+
 end
